@@ -1,0 +1,152 @@
+:root {
+    --primary-color: #4CAF50; 
+    --secondary-color: #ffffff; 
+    --bg-color: linear-gradient(135deg, #0072ff, #00c6ff);
+    --card-bg: rgba(255, 255, 255, 0.9);
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: var(--bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    color: #333;
+}
+
+.weather-app-container {
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;  
+    text-align: center;
+}
+
+h1 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.search-box {
+    display: flex;
+    margin-bottom: 20px;
+    gap: 10px;
+}
+
+#city-input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+#search-button {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+#search-button:hover {
+    background-color: #388E3C;
+}
+ 
+.weather-card {
+    border-top: 2px solid var(--primary-color);
+    padding-top: 20px;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.weather-card.hidden {
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    padding: 0 30px;
+}
+
+#city-name {
+    font-size: 1.8em;
+    margin: 10px 0;
+    color: #0072ff;
+}
+
+.main-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px 0;
+}
+
+.temp-large {
+    font-size: 4em;
+    font-weight: bold;
+    margin: 0 10px 0 0;
+}
+
+.icon {
+    width: 80px;
+    height: 80px;
+}
+
+.condition-text {
+    font-size: 1.2em;
+    font-style: italic;
+    margin-bottom: 25px;
+}
+
+.details-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 15px;
+    text-align: center;
+    border-top: 1px dashed #ccc;
+    padding-top: 15px;
+}
+
+.label {
+    font-size: 0.9em;
+    color: #666;
+    margin: 0;
+}
+
+.value {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 5px 0 0 0;
+    color: #333;
+}
+
+.error-text {
+    color: #D32F2F;  
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+@media (max-width: 600px) {
+    .weather-app-container {
+        margin: 20px;
+        padding: 20px;
+    }
+
+    .temp-large {
+        font-size: 3em; 
+    }
+
+    .icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .details-grid {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
